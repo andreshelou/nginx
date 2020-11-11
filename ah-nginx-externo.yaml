@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-externo
   labels:
-    app: ah-nginx
+    app: ah-nginx-externo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ah-nginx
+      app: ah-nginx-externo
   template:
     metadata:
       labels:
-        app: ah-nginx
+        app: ah-nginx-externo
     spec:
       containers:
-      - name: ah-nginx
+      - name: ah-nginx-externo
         image: nginx:1.15.4
         ports:
         - containerPort: 8080
